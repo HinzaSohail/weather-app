@@ -1,8 +1,7 @@
 async function getWeather() {
   const city = document.getElementById("cityInput").value;
-  const apiKey = "YOUR_OPENWEATHERMAP_API_KEY"; // Replace this!
-  const url = https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey};
-
+  const apiKey = "Open-Meteo.com"; // Replace this!
+  const url =https://open-meteo.com/
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -22,7 +21,7 @@ async function getWeather() {
           <p>Humidity: ${data.main.humidity}% | Wind: ${data.wind.speed} m/s</p>
         </div>
       `;
-    } else {
+ } else {
       result.innerHTML = <p class="text-red-200">Location not found.</p>;
     }
   } catch (error) {
